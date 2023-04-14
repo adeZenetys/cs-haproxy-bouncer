@@ -42,7 +42,7 @@ function M.ReplyBan(applet)
         applet:send()
     elseif M.template_str ~= "" and utils.accept_html(applet) == true then
         local response = M.template_str
-        applet:set_status(200)
+        applet:set_status(M.ret_code)
         applet:add_header("content-length", string.len(response))
         applet:add_header("content-type", "text/html")
         applet:start_response()
